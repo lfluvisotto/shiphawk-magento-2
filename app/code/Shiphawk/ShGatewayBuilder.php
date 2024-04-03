@@ -31,7 +31,7 @@ class ShGatewayBuilder
     private static function extractGatewayHost($gatewayUrl) {
         # The pattern to extract the url parts from gateway url.
         $pattern = '/^([^:\/?#]+:?\/\/)?([^\/?#]*)?[^?#]*(\?([^#]*))?(#(.*))?/';
-        preg_match($pattern, $gatewayUrl, $matches);
+        preg_match($pattern, (string)$gatewayUrl, $matches);
         # The host part of url should be in the last element of matched parts array.
         $gatewayHost = end($matches);
 
